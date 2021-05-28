@@ -1,0 +1,53 @@
+<ion-content [scrollEvents]="true">
+  <ion-header>
+    <ion-toolbar class="container-general">
+      <ion-buttons class="icon-menu-movil" slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-grid class="menu-pc">
+        <ion-row>
+          <ion-col size="4">
+            <a routerLink="/home"><img src="/assets/img/logo.svg" class="logo" alt="Angelica Montes"/></a>
+          </ion-col>
+          <ion-col size="8">
+            <h2 class="text-right">
+              <a routerLink="/sobre-mi">Sobre mi</a>
+              <a routerLink="/blog"><u>Blog</u></a>
+              <a routerLink="/galeria">Galeria</a>
+              <a routerLink="/contacto">Contacto</a>
+            </h2>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-title class="text-center">
+        <a routerLink="/home"><img src="/assets/img/logo.svg" class="logo-movil" alt="Angelica Montes"/></a>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="container-general">
+    
+    <ion-grid style="max-width: 769px;">
+      <ion-row>
+        <ion-col>
+          <img src="{{todo.img}}" width="100%" alt="En las calles">
+          <h2>
+            {{todo.task}}
+          </h2>
+          <h5 class="text-justify">
+            <ion-textarea class="textatea-blog-vista" disabled value="{{todo.description}}"></ion-textarea>
+            <hr>
+            {{todo.date | date: "dd MMMM yyy" }}
+          </h5>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+  </div>
+
+
+
+
+
+</ion-content>

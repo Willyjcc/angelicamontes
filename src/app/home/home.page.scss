@@ -1,4 +1,40 @@
-.welcome-card img {
-  max-height: 35vh;
-  overflow: hidden;
+.cuadro1{
+    position: absolute;
+    top: 100px;
+    opacity: 0.5;
+}
+.cuadro2{
+    position: absolute;
+    top: 70px;
+    opacity: 0.6;
+    height: 86%;
+    right: -250px;
+}
+.cuadro3{
+    position: absolute;
+    top: 70px;
+    width: 88.4%;
+    height: 90%;
+    opacity: 0.5;
+}
+@media only screen and (max-width : 992px){
+    .cuadro2{
+        height: 71%;
+    }
+    .cuadro3{
+        height: 80%;
+    } 
+}
+@media only screen and (max-width : 979px){
+    .cuadro2{
+        height: 61%;
+    }
+    .cuadro3{
+        height: 65%;
+    } 
+}
+@media only screen and (max-width : 769px){
+    .cuadro3{
+        height: 90%;
+    } 
 }

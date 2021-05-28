@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-list lines="full">
+    <div *ngIf="urlImage | async; else btnDisabled"> Imagen Actualizada </div>
+    <ng-template #btnDisabled>
+      Imagen Actual 600 x 480 
+    </ng-template>
+    <br>
+    <img *ngIf="todo.img" src="{{todo.img}}" width="100%" style="max-width:600px;">
+    <ion-card *ngIf="todo.img == '' " class="fucsia" style="max-width:600px;">
+      <ion-card-content>
+        <img src="/assets/img/preview.png" width="100%">
+      </ion-card-content>  
+    </ion-card>
+    <h5>Seleccionar image:</h5>
+    <input type="file" accept=".png, .jpg" (change)="onUpload($event)">
+    
+    <br><br>
+    <input id="imagen" type="hidden" [(ngModel)]="todo.img" [value]="urlImage | async">
+
+
+
+    <ion-item *ngIf="todo">
+      <ion-input required type="text" placeholder="TITULO" [(ngModel)]="todo.task"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="todo">
+      <ion-textarea placeholder="DESCRIPTION" [(ngModel)]="todo.description" required></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Fecha:</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" min="2000-01-01" max="2030-12-09" value="2020-09-23T15:03:46.789" [(ngModel)]="todo.date" ></ion-datetime>
+    </ion-item>
+    <!-- <ion-item *ngIf="todo">
+      <ion-input required type="number" placeholder="Priority" [(ngModel)]="todo.priority"></ion-input>
+    </ion-item> -->
+  </ion-list>
+  <ion-button expand="full" (click)="saveTodo()">Save</ion-button>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="danger">
+      <ion-fab-button color="danger" (click)="onRemoveTodo(todoId)" routerLink="/dashboard" routerDirection="forward">
+          <ion-icon name="trash"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+</ion-content>

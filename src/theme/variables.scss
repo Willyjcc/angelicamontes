@@ -75,3 +75,117 @@
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
 }
+// Willy
+$colors: (
+  blanco:#fff,
+  fucsia:#5b003b,
+  fucsia-claro: #9e005d,
+  rosado: #ff88d5,
+);
+.white{
+  background-color: map-get($colors, blanco);
+}
+.fucsia-claro{
+  background-color: map-get($colors, fucsia-claro);
+}
+.rosado{
+  background-color: map-get($colors, rosado);
+}
+.fucsia{
+  background-color: map-get($colors, fucsia);
+}
+.white-text{
+  color: map-get($colors, blanco);
+}
+.fucsia-text{
+  color: map-get($colors, fucsia);
+}
+.text-center{
+	text-align: center;
+}
+.text-left{
+	text-align: left;
+}
+.text-right{
+	text-align: right;
+}
+.text-justify{
+	text-align: justify;
+}
+.bold{
+	font-weight: bold !important;
+}
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.5 !important;
+  letter-spacing: 1px !important;
+}
+.sticky{
+  position: sticky;
+  top:-17px;
+  z-index: 999;
+  margin: -85px 0;
+  padding: 0 50px
+}
+ion-toolbar{
+  a{
+    color:#000;
+    margin:0 10px;
+  }
+}
+hr {
+  display: inline-block;
+  height: 4px;
+  border-width: 0;
+  box-sizing: content-box;
+  border-radius: 50px;
+  width: 100%;
+  background: #9e005d;
+}
+ion-header, .header-ios{
+  display: initial;
+  --inner-border-width: 0 0 0px;
+  ion-toolbar{
+    --background:none;
+  }
+}
+.header-ios ion-toolbar:last-child {
+  --border-width: 0 0 0px;
+}
+.sc-ion-buttons-ios-h {
+  margin: 20px 0;
+}
+.header-ios ion-toolbar{
+  .logo-movil{
+      position: relative;
+      top: 6px;
+  }
+}
+.sc-ion-textarea-ios-h, .sc-ion-textarea-md-h {
+  height: 200px;
+}
+.native-textarea.sc-ion-textarea-ios, .native-textarea.sc-ion-textarea-md {
+  height: 100%;
+  overflow: hidden;
+  opacity: 1 !important;
+}
+.textatea-blog-vista{
+  width: 100%;
+  height: 400px;
+  .native-textarea.sc-ion-textarea-md,.native-textarea.sc-ion-textarea-ios {
+    overflow: auto;
+  }
+}
+@media only screen and (max-width : 979px){
+  ion-header a{
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width : 769px){
+  ion-header a{
+    font-size: 12px;
+  }
+}
